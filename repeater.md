@@ -18,6 +18,9 @@ Repeater allows testers to send, modify, and replay individual HTTP(S) requests 
 - [x] Task 3 – Modifying Requests  
 - [x] Task 4 – Observing and Analyzing Responses  
 - [x] Task 5 – Practical Use Cases of Repeater  
+- [x] Task 6 – Modify Request Headers Practical  
+- [x] Task 7 – Validate Numeric Endpoint Practical  
+- [x] Extra Mile Challenge – Union SQL Injection
 
 ---
 
@@ -112,7 +115,8 @@ Use Burp Suite Repeater to modify HTTP request headers and observe server respon
 2. Go to the **Repeater** tab and select the request.  
 3. Click **Send** once to view the response.  
    - The **Response** tab shows the HTML source.  
-4. Optionally, switch the **Display** view to **Hex** or **Raw**.  
+4. Optionally, switch the **Display** view to **Hex** or **Raw**.
+ 
 <img width="984" height="904" alt="Send Request to Repeater" src="https://github.com/user-attachments/assets/802dfbbd-54d6-4b02-9e00-5662e2362e9d" />
 
 ---
@@ -120,14 +124,16 @@ Use Burp Suite Repeater to modify HTTP request headers and observe server respon
 ### **Step 3 – Modify the Request Header**
 1. In the Repeater request editor, add a new header:  
 
-2. Ensure the header is correctly formatted and placed above the first blank line in the request.  
+2. Ensure the header is correctly formatted and placed above the first blank line in the request.
+   
 <img width="319" height="705" alt="Modify Header in Repeater" src="https://github.com/user-attachments/assets/2e394f9c-f9e2-4f8f-8dbf-1e054890f5cc" />
 
 ---
 
 ### **Step 4 – Send Modified Request**
 1. Click **Send** in Repeater.  
-2. Observe the server’s response in the **Response** tab.  
+2. Observe the server’s response in the **Response** tab.
+   
 <img width="979" height="912" alt="Response After Header Modification" src="https://github.com/user-attachments/assets/a335e7e1-169b-4741-b8b1-4a3a942396fe" />
 
 ---
@@ -144,9 +150,11 @@ Use Burp Suite Repeater to modify HTTP request headers and observe server respon
 
 ### **Example Request & Response**
 **Request:**  
+
 <img width="306" height="318" alt="Original Request" src="https://github.com/user-attachments/assets/908de1c8-f08f-454f-b78f-186b1f8ec88c" />
 
 **Response:**  
+
 <img width="315" height="263" alt="Response Example" src="https://github.com/user-attachments/assets/90f8e82c-4b80-4bf2-b0f5-c2639c4c9cb1" />
 
 **Observation:**  
@@ -179,7 +187,8 @@ Use Burp Suite Repeater to test numeric endpoints for proper validation and obse
 ### **Step 2 – Browse the Target**
 1. Navigate in your browser to: `http://10.10.26.44/products/`.  
 2. Click on some of the **See More** links.  
-   - Notice the numeric endpoints in the URL, e.g., `/products/3`.  
+   - Notice the numeric endpoints in the URL, e.g., `/products/3`.
+     
 <img width="985" height="371" alt="Products Page Example" src="https://github.com/user-attachments/assets/110b2281-dcaf-497e-ad0b-8e0ec1cdc2a6" />
 
 ---
@@ -187,7 +196,8 @@ Use Burp Suite Repeater to test numeric endpoints for proper validation and obse
 ### **Step 3 – Send Request to Repeater**
 1. Capture one of the numeric endpoint requests via Proxy (if needed).  
 2. Right-click the request → **Send to Repeater**.  
-3. Go to the **Repeater** tab and select the request.  
+3. Go to the **Repeater** tab and select the request.
+   
 <img width="983" height="885" alt="Send Request to Repeater" src="https://github.com/user-attachments/assets/425f8bc5-1ba1-49d3-ae9b-3bdb3085021c" />
 
 ---
@@ -196,7 +206,8 @@ Use Burp Suite Repeater to test numeric endpoints for proper validation and obse
 1. Change the numeric part of the URL to test different values:  
    - Valid integers (e.g., `/products/1`, `/products/5`)  
    - Invalid inputs (e.g., `/products/abc`, `/products/9999`)  
-2. Click **Send** and observe server responses.  
+2. Click **Send** and observe server responses.
+   
 <img width="992" height="897" alt="Modified Endpoint Response" src="https://github.com/user-attachments/assets/a1ef011c-4b5c-4bad-be5a-d321283711a7" />
 
 ---
@@ -215,12 +226,15 @@ Use Burp Suite Repeater to test numeric endpoints for proper validation and obse
 ### **Step 6 – Document Observations**
 
 **Request:**
+
 <img width="294" height="294" alt="Original Request" src="https://github.com/user-attachments/assets/2db65492-d547-4180-aedc-57263e29f191" />
 
 **Modified Request (Invalid Input):**
+
 <img width="308" height="321" alt="Modified Request" src="https://github.com/user-attachments/assets/c424a551-416f-45f9-882a-7a76d9773156" />
 
 **Response:**  
+
 <img width="313" height="223" alt="Response for Invalid Input" src="https://github.com/user-attachments/assets/6b901429-0410-4d85-b9ef-ae51621b0a30" />
 
 **Observation:**  
@@ -234,8 +248,7 @@ The endpoint may not validate input properly, potentially allowing unauthorized 
   <summary><strong>🚀 Extra Mile Challenge – Union SQL Injection with Burp Repeater</strong></summary>
 
 ### **Objective**
-Identify and exploit a **Union SQL Injection vulnerability** in the `ID` parameter of the `/about/ID` endpoint to retrieve sensitive data (CEO notes).
-</details>
+Identify and exploit a **Union SQL Injection vulnerability** in the `ID` parameter of the `/about/ID` endpoint to retrieve sensitive data (CEO notes)
 
 
 ---
@@ -295,6 +308,7 @@ group_concat() is useful for combining multiple results into one output.
 Manual Repeater testing gives fine-grained control over requests for exploitation.
 
 </details>
+
 ---
 
 ## 🎯 Key Takeaways
