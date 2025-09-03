@@ -24,7 +24,7 @@ This repo serves as a **portfolio-ready reference** for employers or anyone inte
 - Exploitation and vulnerability confirmation  
 
 This repository is ideal for:  
-- Junior penetration testers building their skills  
+- Documenting my progress  
 - Students learning Burp Suite hands-on  
 - Security enthusiasts who want practical, actionable learning material  
 
